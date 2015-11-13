@@ -25,6 +25,11 @@
             <?php the_content(); ?>
             <?php wp_link_pages( array( 'before' => '<div class="pages-links">' . __( 'Pages:', 'triad' ),  'after' => '</div>') ); ?>
             <?php edit_post_link( __( 'Edit', 'triad' ), '<span class="edit-link">', '</span>' ); ?>
+            <?php
+                    //If comments are open or we have at least one comment, load the comment template
+                    if( comments_open() || get_comments_number() != '0' )
+                        comments_template( '', true );
+            ?>
         </div><!-- .entry-content -->
 
         </section>

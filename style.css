@@ -529,6 +529,7 @@ body.archive .page-title {
 }
 .entry-content,
 .entry-summary {
+    overflow: hidden;
     margin: 1.5em 0 0;
 }
 .entry-content table,
