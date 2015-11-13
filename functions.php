@@ -118,6 +118,11 @@ function triad_register_custom_background(){
 }
 add_action( 'after_setup_theme', 'triad_register_custom_background' );
 
+function triad_register_favicon(){
+    printf( "<link rel=\"shortcut icon\" type=\"image/vnd.microsoft.icon\" href=\"%s/favicon.ico\" />\n", site_url() );
+}
+add_action( 'wp_head', 'triad_register_favicon' );
+
 
 require( get_template_directory() . '/inc/custom-header.php' );
 
