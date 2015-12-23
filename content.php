@@ -50,10 +50,11 @@
             <?php
             /* translators: used between list items, there is a space after the comma */
             $categories_list = get_the_category_list( __( ', ', 'triad' ) );
-            if ( $categories_list && triad_categorized_blog() ) :
+            if ( $categories_list ) :
                 ?>
                 <span class="cat-links">
                 <?php printf( __( 'Posted in %1$s', 'triad' ), $categories_list ); ?>
+                <br>
             </span>
             <?php endif; // End if categories ?>
 
@@ -72,6 +73,6 @@
 
         <?php edit_post_link( __( 'Edit', 'triad' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 
-        </section><!-- .post-content -->
-    </footer><!-- .entry-meta -->
+        </footer><!-- .entry-meta -->
+    </section><!-- .post-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

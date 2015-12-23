@@ -33,7 +33,6 @@ if ( ! empty( $header_image ) ) { ?>
  */
 function triad_custom_header_setup() {
     $args = array(
-        'default-image'          => get_template_directory_uri() . '/img/Triad-logo.png',
         'uploads'                => true,
         'default-text-color'     => 'e9e0e1',
         'width'                  => 900,

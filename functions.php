@@ -18,6 +18,15 @@ if(!function_exists('triad_setup')) {
 }
 add_action('after_setup_theme', 'triad_setup');
 
+if (! function_exists( '_wp_render_title_tag' )){
+    function theme_slug_render_title() {
+        ?>
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <?php
+    }
+    add_action( 'wp_head', 'theme_slug_render_title' );
+}
+
 /**
  * Register widgetized area and update sidebar with default widgets
  *
@@ -118,32 +127,5 @@ function triad_register_custom_background(){
 }
 add_action( 'after_setup_theme', 'triad_register_custom_background' );
 
-function triad_register_favicon(){
-    printf( "<link rel=\"shortcut icon\" type=\"image/vnd.microsoft.icon\" href=\"%s/favicon.ico\" />\n", site_url() );
-}
-add_action( 'wp_head', 'triad_register_favicon' );
-
 
 require( get_template_directory() . '/inc/custom-header.php' );
-
-function triad_wp_title( $title, $sep ) {
-    global $paged, $page;
-
-    if ( is_feed() )
-        return $title;
-
-    // Add the site name.
-    $title .= get_bloginfo( 'name' );
-
-    // Add the site description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_home() || is_front_page() ) )
-        $title = "$title $sep $site_description";
-
-    // Add a page number if necessary.
-    if ( $paged >= 2 || $page >= 2 )
-        $title = "$title $sep " . sprintf( __( 'Page %s', 'triad' ), max( $paged, $page ) );
-
-    return $title;
-}
-add_filter( 'wp_title', 'triad_wp_title', 10, 2 );

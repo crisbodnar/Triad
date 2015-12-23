@@ -1,11 +1,11 @@
 === Triad ===
 Contributors: Cristian Bodnar
 Requires at least: WordPress 4.1
-Tested up to: WordPress 4.3
-Version: 1.02
+Tested up to: WordPress 4.4
+Version: 1.03
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blue, red, pink, yellow, light, tan, one-column, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, post-formats, rtl-language-support, threaded-comments, translation-ready
+Tags: pink, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, post-formats, threaded-comments, translation-ready, sticky-post
 
 == Description ==
 Triad is a simple, elegant, minimalist and responsive Theme based on a material design

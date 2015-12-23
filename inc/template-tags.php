@@ -29,43 +29,6 @@ if( !function_exists( 'triad_posted_on' ) ){
 }
 
 /**
- * Returns true if a blog has more than 1 category
- *
- * @since triad 1.0
- */
-
-function triad_categorized_blog() {
-    if( false === ($all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-        $all_the_cool_cats = get_categories( array( 'hide_empty' => 1, ) );
-
-        $all_the_cool_cats = count($all_the_cool_cats);
-
-        set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-
-        if( '1' != $all_the_cool_cats ) {
-            // This blog has more than 1 category
-            return true;
-        }
-        else {
-            // This blog has only one category
-            return false;
-        }
-    }
-}
-
-/**
- * Flush out the transients used in triad_categorized_blog
- *
- * @since triad 1.0
- */
-function triad_category_transient_flusher() {
-    // If the number of categories changes
-    delete_transient( 'all_the_cool_cats' );
-}
-add_action( 'edit_category', 'triad_category_transient_flusher' );
-add_action( 'save_post', 'triad_category_transient_flusher' );
-
-/**
  * Navigation
  */
 

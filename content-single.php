@@ -37,23 +37,12 @@
         /* translators: used between list items, there is a space after the comma */
         $tag_list = get_the_tag_list( '', __( ' ', 'triad' ) );
 
-        if ( ! triad_categorized_blog() ) {
-            // This blog only has 1 category so we just need to worry about tags in the meta text
-            if ( '' != $tag_list ) {
-                $meta_text = __( '<span class="fa-tag"></span> %2$s', 'triad' );
-            } else {
-                $meta_text = __( '', 'triad' );
-            }
-
+        // But this blog has loads of categories so we should probably display them here
+        if ( '' != $tag_list ) {
+             $meta_text = __( 'Posted in %1$s <br><span class="fa-tag"></span> %2$s ', 'triad' );
         } else {
-            // But this blog has loads of categories so we should probably display them here
-            if ( '' != $tag_list ) {
-                $meta_text = __( 'This entry was posted in %1$s <span class="fa-tag"></span> %2$s ', 'triad' );
-            } else {
-                $meta_text = __( 'This entry was posted in %1$s. ', 'triad' );
-            }
-
-        } // end check for categories on this blog
+            $meta_text = __( 'Posted in %1$s. ', 'triad' );
+        }
 
         printf(
             $meta_text,
