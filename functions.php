@@ -12,7 +12,6 @@ if(!function_exists('triad_setup')) {
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'title-tag' );
-        add_editor_style();
         register_nav_menus(array('primary' => __('Primary Menu', 'triad'), ));
     }
 }
